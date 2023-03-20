@@ -1,5 +1,6 @@
 pipeline{
-    agent any    stages{
+    agent any    
+    stages{
         stage("git checkout"){
             steps{
                 echo "first statge"
