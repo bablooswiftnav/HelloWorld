@@ -8,8 +8,14 @@ pipeline{
         }
         stage("Run docker image"){
             steps{
+                steps{
                 script{
-                    echo 'Hey I am here !!'
+                    echo 'Building Image'
+                    sh 'docker build -t babloojangoo/hello0 .'
+                    }
+                }
+                script{
+                    echo 'Running Image'
                     //  sh 'mount --bind /media/daten/home/hellouniverse /home/hellouniverse'
                     sh 'docker run  babloojangoo/hello0'
                     // sh 'docker run -it --home=/ babloojangoo/hellouniverse'
