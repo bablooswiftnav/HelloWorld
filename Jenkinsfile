@@ -1,11 +1,6 @@
 pipeline{
     agent any    
     stages{
-        stage("Testing"){
-            steps{
-                echo "first statge"
-            }
-        }
         stage("Image Building"){
             steps{
                 script{
@@ -20,6 +15,11 @@ pipeline{
                     echo 'Running Image'
                     sh 'docker run  babloojangoo/hello0'
                 }
+            }
+        }
+        stage("Testing"){
+            steps{
+                echo "first statge"
             }
         }
     }
