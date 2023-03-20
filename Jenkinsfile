@@ -8,12 +8,12 @@ pipeline{
         }
         stage("Run docker image"){
             steps{
-                steps{
                 script{
                     echo 'Building Image'
                     sh 'docker build -t babloojangoo/hello0 .'
                     }
                 }
+            steps{
                 script{
                     echo 'Running Image'
                     //  sh 'mount --bind /media/daten/home/hellouniverse /home/hellouniverse'
